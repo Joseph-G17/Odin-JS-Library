@@ -1,3 +1,5 @@
+const MyBooks = [];
+
 class Book {
     constructor(name, author, year) {
         this.name = name;
