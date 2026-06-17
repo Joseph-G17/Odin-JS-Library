@@ -13,8 +13,14 @@ function StoreBook(name, author, year){
 
     MyBooks.push(book);
 
-    console.log(book.name, book.author, book.year, book.id);
+    return book;
 } 
 
+function DisplayBook(){
+    for(const book of MyBooks) {
+        print(book);
+    }
+}
+
 const user_book = StoreBook("Joemer", "Joey", 1978);
-console.log(MyBooks);
+console.log(user_book);

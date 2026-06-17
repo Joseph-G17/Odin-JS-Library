@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Revalia";
+  src: 
+  url(fonts/revalia-regular-webfont.woff2) format("woff2"),
+  url(fonts/revalia-regular-webfont.woff) format("woff");
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Revalia;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 8fr 1fr;
+  
+}
+
+nav {
+
+}
+
+.new-book {
+
+}
+
+main {
+
+}
