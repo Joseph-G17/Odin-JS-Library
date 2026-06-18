@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width" initial-scale="1.0">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <title>Project: Library</title>
     <link rel="stylesheet" href="./bookbin.css">
   </head>
@@ -14,14 +14,33 @@
         </button>
       </nav>
       <main>
+        <h2>Books:</h2>
+        <dialog id="newBookDialog">
+          <form action="/submit-form-endpoint" method="dialog">
+            <p class="book-information">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_book_name">
+            </p>
+            <p class="book-information">
+              <label for="author">Author:</label>
+              <input type="text" id="author" name="user_book_author">
+            </p>
+            <p class="book-information">
+              <label for="year">Year:</label>
+              <input type="text" id="year" name="user_book_year">
+            </p>
+            <div class="dialog-options">
+              <button class="submit-btn" type="submit" name="create-entry">Submit</button>
+              <button type="button" name="close" autofocus>Close</button>
+              <label for="read">Read: </label>
+              <input type="checkbox" name="user_read" id="read">
+            </div>
+          </form>
+        </dialog>
         <div class="book-cards">
-          <div class="card">
-              <h4>Name</h4>
-              <p>Author</p>
-              <p>Year</p>
-          </div>
         </div>
       </main>
     </div>
+    <script src="./book1.js"></script>
   </body>
 </html>
