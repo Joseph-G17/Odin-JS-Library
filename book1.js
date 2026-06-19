@@ -18,10 +18,13 @@ function StoreBook(name, author, year, read){
     return book;
 } 
 
-function DisplayBooks(){
-    for(const book of MyBooks) {
-        print(book);
-    }
+function RemoveBook(bookID){
+    const index = MyBooks.findIndex(book => book.id === bookID);
+    if(index == -1)
+        return;
+    MyBooks.splice(index, 1);
+
+    console.log(MyBooks);
 }
 
 /*const user_book = StoreBook("Joemer", "Joey", 1978);
@@ -29,15 +32,19 @@ console.log(user_book);
 */
 
 const dialog = document.getElementById('newBookDialog');
+const closeDialog = document.querySelector('.close-btn');
 const newBookBtn = document.querySelector('.new-book');
 
 const myForm = document.querySelector("form");
 const bookCard = document.querySelector('.book-cards');
 
-const removeBtn = document.querySelector('.remove-btn');
 
 newBookBtn.addEventListener('click', () => {
     dialog.showModal();
+});
+
+closeDialog.addEventListener('click', () =>{
+    dialog.close();
 });
 
 myForm.addEventListener('submit', (event) => {
@@ -67,9 +74,13 @@ myForm.addEventListener('submit', (event) => {
     `;
 
     bookCard.appendChild(newCard);
-    myForm.reset();
-});
 
-removeBtn.addEventListener('submit', () => {
-    
+    const removeBtn = newCard.querySelector('.remove-btn');
+    removeBtn.addEventListener('click', () => {
+        RemoveBook(book.id);
+        newCard.remove();
+    });
+
+    myForm.reset();
+    dialog.close();
 });
